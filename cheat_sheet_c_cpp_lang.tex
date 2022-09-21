@@ -1,0 +1,52 @@
+\documentclass[%
+	11pt,
+	a4paper,
+	utf8,
+	%twocolumn
+		]{article}	
+
+\usepackage{style_packages/podvoyskiy_article_extended}
+
+
+\begin{document}
+\title{Приемы программирования на языках C и C++}
+
+\author{}
+
+\date{}
+\maketitle
+
+\thispagestyle{fancy}
+
+\tableofcontents
+
+\section{Указатели на функции}
+
+\emph{Указатель} -- это переменная, содержащая адрес другой переменной  Если одна переменная содержит адрес другой переменной, то говорят, что она указывает на ту переменную\cite[\strbook{95}]{koltzov-c-lang:2019}.
+
+Синтаксис объявления указателя
+\begin{lstlisting}[
+style = c_cpp,
+numbers = none
+]
+int (*p) (const char *, const char *);  // указатель на функцию
+// cout << asdfas;
+тип *имя_указателя;
+\end{lstlisting}
+
+Несмотря на то, что функция не является переменной, она располагается в памяти, и, следовательно, ее \underline{адрес} можно \emph{присваивать указателю}. Этот адрес считается точкой входа в функцию. Именно он используется при вызове. Поскольку указатель может ссылаться на функцию, ее можно вызывать с помощью этого указателя. Это позволяет также передавать функцию другим функциям в качестве аргументов \cite{koltzov-c-lang:2019}.
+
+\emph{Адрес функции} задается ее \emph{именем}, указанным без скобок и агрументов.
+
+
+
+% Источники в "Газовой промышленности" нумеруются по мере упоминания 
+\begin{thebibliography}{99}\addcontentsline{toc}{section}{Список литературы}
+	\bibitem{koltzov-c-lang:2019}{ \emph{Кольцов Д.М.} Си на примерах. Практика, практика и только практика. -- СПб.: Наука и Техника, 2019. -- 288 с.}
+\end{thebibliography}
+
+%\listoffigures\addcontentsline{toc}{section}{Список иллюстраций}
+
+\lstlistoflistings\addcontentsline{toc}{section}{Список листингов}
+
+\end{document}
